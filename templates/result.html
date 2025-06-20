@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Surprise!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background: #23272e;
+            color: #e5e5e5;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: #282c34;
+            border-radius: 14px;
+            box-shadow: 0 4px 32px rgba(40,44,52,0.10);
+            padding: 2.5em 3em;
+            max-width: 540px;
+            text-align: left;
+            border: 2px solid #61dafb;
+            position: relative;
+        }
+        .message {
+            color: #98c379;
+            font-size: 1.15em;
+            margin-bottom: 2em;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            background: #21252b;
+            border-left: 5px solid #61dafb;
+            padding: 1.2em 1.5em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(97,218,251,0.06);
+            position: relative;
+        }
+        .ascii-art {
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            color: #61dafb;
+            font-size: 1.1em;
+            white-space: pre;
+            margin-bottom: 1.5em;
+            text-align: center;
+            user-select: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2em;
+            padding: 0.6em 1.2em;
+            background: #21252b;
+            color: #61dafb;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 1em;
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            box-shadow: 0 2px 8px rgba(97,218,251,0.08);
+            border: 1px solid #61dafb;
+            letter-spacing: 1px;
+        }
+        .back-link:hover {
+            background: #61dafb;
+            color: #23272e;
+            box-shadow: 0 4px 16px rgba(97,218,251,0.15);
+            border: 1px solid #61dafb;
+        }
+        .back-link::before {
+            content: "</";
+            color: #61dafb;
+            margin-right: 0.2em;
+        }
+        .back-link::after {
+            content: ">";
+            color: #61dafb;
+            margin-left: 0.2em;
+        }
+        ::selection {
+            background: #61dafb;
+            color: #23272e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ascii-art">
+{ /* 2 devs having lunch in ASCII art style */ }
+   (☕)   (🍝)
+  .-''-. .-''-.
+ ( 0  0 )( 0  0 )
+  \_\/_/  \_\/_/
+  /    \  /    \
+ /______\/______\
+  dev_1   dev_2
+        </div>
+        {% if message %}
+            <div class="message">{{ message|safe }}</div>
+        {% endif %}
+        <a href="/" class="back-link">Back</a>
+    </div>
+</body>
+</html>
