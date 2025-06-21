@@ -19,21 +19,31 @@ def process():
             
             <p>I never thought I’d be writing something like this to flirt with you — but hey, who wouldn’t be into someone who codes? 😄</p>
 
-            <p>I already love your techy posts and your wonderfully weird, unique vibe. I would gladly bookmark your profile 😂</p>
+            <p>I lowkey like your techy posts and your wonderfully weird, unique vibe. Which is exactly my kind of awesome!</p>
 
-            <p>Honestly, your weirdness is exactly my kind of awesome! 🤓</p>
+            <p>Wondering...would you join me for coffee or lunch sometime on the weekend ? Maybe we can geek out and make some great memories together! 😊</p>
 
-            <p>So wondering...would you like to join me for coffee or lunch sometime on the weekend ? Maybe we can geek out and make some great memories together! 😊</p>
-
-            <p><i>P.S. Are you an Exception? Cause I’d catch you every single day! </i> 💻😉</p>
+            <p><i>P.S. You better be an Exception. Cause I would catch you! </i> 💻😉</p>
 
             </body>
         """
         )
     elif name:
         message = (
-            "Wait- stranger, you aint the one I am expecting. <br>"
-            "No pranks, I know who you are!! Try again 😏"
+            f"""
+                <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333;'>
+                <p>No pranks, I already know who you are!! 😏</p>
+                
+                <p>Never thought I’d be writing something like this to flirt with you — but hey, who wouldn’t be into someone who codes? 😄</p>
+
+                <p>I lowkey like your techy posts and your wonderfully weird, unique vibe. Which is exactly my kind of awesome!</p>
+
+                <p>Wondering...would you join me for coffee or lunch sometime on the weekend ? Maybe we can geek out and make some great memories together! 😊</p>
+
+                <p><i>P.S. You better be an Exception. Cause I would catch you! </i> 💻😉</p>
+
+                </body>
+            """
         )
     return render_template("result.html", message=message, name=name)
 
